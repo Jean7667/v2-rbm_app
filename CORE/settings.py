@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-52ue@te-xr_imvkb6+yh+vazdxxm#z%&7!e=y1h)q-@o_go_*b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.gitpod.io', '.herokuapp.com']
+ALLOWED_HOSTS = ['.gitpod.io', '.herokuapp.com','127.0.0.1','localhost']
 CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io', 'https://*.herokuapp.com'] 
 
 
