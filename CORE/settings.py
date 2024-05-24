@@ -17,6 +17,7 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = BASE_DIR / 'templates'
@@ -28,6 +29,7 @@ TEMPLATES_DIR = BASE_DIR / 'templates'
 SECRET_KEY = 'django-insecure-52ue@te-xr_imvkb6+yh+vazdxxm#z%&7!e=y1h)q-@o_go_*b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 
 ALLOWED_HOSTS = ['.gitpod.io', '.herokuapp.com','127.0.0.1','localhost']
@@ -39,6 +41,7 @@ CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io', 'https://*.herokuapp.com']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django_extensions',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -142,11 +145,62 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+""" STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "staticfiles" """
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static'),]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
+
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+""" LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        # Define console handler
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        },
+        # Define file handler
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'debug.log'),  # Specify log file path
+        },
+    },
+    'loggers': {
+        # Root logger
+        '': {
+            'handlers': ['console', 'file'],  # Log to both console and file
+            'level': 'DEBUG',
+        },
+        # Django logger
+        'django': {
+            'handlers': ['console', 'file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    },
+}     """
+ 
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
+]
