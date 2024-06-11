@@ -1,15 +1,15 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
 
-{% block title %}About page{% endblock title %}
+{% block title %}About RBM Company{% endblock title %}
 
 {% block content %}
-
 <div class="container-fluid">
-    <div class="background-div" style="min-height: 550px;">
-        <div class="col-md-8 offset-md-2 p-5 m-3 bg-secondary bg-light text-black shadow rounded-5">
-            <h1>RBM Company</h1>
+    <div class="row align-items-center justify-content-center background-div">
+        <div class="col-md-8 p-5 m-5 bg-secondary bg-light text-black shadow rounded-5">
+            <h1 class="text-center mb-2">RBM Company</h1>
             <p class="lead">A dynamic booking consultancy firm connecting clients with experts across various fields.</p>
-            <h3 class="text-center">How it Works</h3>
+            
+            <h3 class="text-center mb-2">How it Works</h3>
             <div class="container">
                 <div class="row row-equal">
                     <!-- Card 1 -->
@@ -17,7 +17,7 @@
                         <div class="card bg-light shadow-sm h-100">
                             <div class="card-body">
                                 <strong>1. Booking Consultant:</strong> 
-                                The website helps clients find the perfect expert by allowing them to input their requirements and preferences, generating a curated list of matching experts.
+                                The website serves as a booking consultant, helping clients find the perfect expert by allowing them to input their requirements, preferences, and desired skill sets, generating a curated list of matching experts.
                             </div>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                         <div class="card bg-light shadow-sm h-100">
                             <div class="card-body">
                                 <strong>2. Check the List of Experts:</strong> 
-                                Clients can browse through detailed expert profiles showcasing skills, experience, and expertise.
+                                After specifying their requirements, clients can browse through detailed expert profiles showcasing skills, experience, and expertise.
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                         <div class="card bg-light shadow-sm h-100">
                             <div class="card-body">
                                 <strong>3. Find the Skillset You Need:</strong> 
-                                Clients can efficiently filter experts by specific skills needed, such as IT consulting, marketing, or legal advice.
+                                Clients can efficiently filter experts by specific skills needed, such as IT consulting, marketing, or legal advice, ensuring they find the right match.
                             </div>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                         <div class="card bg-light shadow-sm h-100">
                             <div class="card-body">
                                 <strong>5. Next Morning Service:</strong> 
-                                RBM ensures swift service, with experts arriving as soon as the next morning after booking, providing timely assistance for projects.
+                                RBM's swift service ensures that clients can have the expert at their doorsteps as soon as the next morning after booking, providing timely assistance and support for their projects or tasks without delays.
                             </div>
                         </div>
                     </div>
@@ -62,4 +62,5 @@
         </div>
     </div>
 </div>
+
 {% endblock %}

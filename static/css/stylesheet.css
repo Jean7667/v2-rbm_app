@@ -50,8 +50,17 @@ body{
 }
 
 .footer {
-      height: 30px;
+      height: 20px;
   }
 
+  .copyright{
+    font-size: 14px; 
+}
 
 
+
+  @media (max-width: 767px) {
+    .background-div {
+        height: auto; /* Adjust height for small devices */
+    }
+}
