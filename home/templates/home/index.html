@@ -5,9 +5,9 @@
 
 
 <div class="container-fluid">
-    <div class="row justify-content-center align-items-center background-div mx-auto">
-        <div class="col-md-8">
-            <div class="card p-3 bg-secondary bg-light text-black shadow rounded-5">
+    <div class="row align-items-center justify-content-center background-div">
+        <div class="col-md-8 p-5 m-5 bg-secondary bg-light text-black shadow rounded-5">
+           
                 {% if user.is_authenticated %}
                     <h2 class="fs-5 mb-1">Join us</h2> <!-- Added class mb-4 to reduce space -->
                     <form method="post" action="{% url 'account_logout' %}">
