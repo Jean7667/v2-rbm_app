@@ -49,14 +49,13 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'crispy_forms',
-    'crispy_bootstrap5',
+    'crispy_forms',          
+    'crispy_bootstrap5',    
     'home',
     'about',
     'customer', 
     'consultants',
-    'booking'
-
+    'booking',
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
