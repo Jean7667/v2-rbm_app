@@ -34,12 +34,27 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
-    <script src="{% static 'js/main.js' %}" defer></script>
+    
    
 
 </head>
 
 <body>
+
+    <!-- displaying Django messages -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert custom-alert {{ message.tags }} alert-dismissible fade show" id="msg{{ forloop.counter }}" role="alert">
+                    <div class="py-2">{{ message | safe }}</div>
+                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
     <nav class="navbar navbar-expand-lg bg-light fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">RBM.io</a>
@@ -84,7 +99,18 @@
         </div>
         <!-- Copyright -->
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+   
     
+    <!-- JS to close alert message after 5 seconds from Bootstrap's JS: https://getbootstrap.com/docs/5.0/components/alerts/ -->
+  <script>
+    setTimeout(function () {
+        let messages = document.getElementById('msg');
+        let alert = new bootstrap.Alert(messages);
+        alert.close();
+    }, 5000);
+    
+</script>
+<script src="{% static 'js/main.js' %}" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>
